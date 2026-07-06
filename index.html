@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <form id="form">
+
+        <h2>Registration Form</h2>
+
+        <!-- Name -->
+
+        <div class="input-box">
+            <label>Full Name:</label>
+            <input type="text"
+                   id="name"
+                   placeholder="e.g. Sahar Ansari"
+                   onkeyup="checkName()">
+
+            <small id="nameError"></small>
+        </div>
+
+        <!-- Email -->
+
+        <div class="input-box">
+            <label>Email Address:</label>
+
+            <input type="text"
+                   id="email"
+                   placeholder="example@gmail.com"
+                   onkeyup="checkEmail()">
+
+            <small id="emailError"></small>
+        </div>
+
+        <!-- Password -->
+
+        <div class="input-box">
+
+            <label>Password:</label>
+
+            <div class="password-box">
+
+                <input type="password"
+                       id="password"
+                       placeholder="Enter Password"
+                       onkeyup="checkPassword()">
+
+                <button type="button"
+                        class="eye-btn"
+                        onclick="togglePassword('password',this)">
+                    👁
+                </button>
+
+            </div>
+
+            <div id="strength"></div>
+
+            <small id="passError"></small>
+
+        </div>
+
+        <!-- Confirm Password -->
+
+        <div class="input-box">
+
+            <label>Confirm Password:</label>
+
+            <div class="password-box">
+
+                <input type="password"
+                       id="confirm"
+                       placeholder="Confirm Password"
+                       onkeyup="checkConfirm()">
+
+                <button type="button"
+                        class="eye-btn"
+                        onclick="togglePassword('confirm',this)">
+                    👁
+                </button>
+
+            </div>
+
+            <small id="confirmError"></small>
+
+        </div>
+
+        <!-- Phone -->
+
+        <div class="input-box">
+
+            <label>Phone Number:</label>
+
+            <input type="text"
+                   id="phone"
+                   maxlength="10"
+                   placeholder="1234567890"
+                   onkeyup="checkPhone()">
+
+            <small id="phoneError"></small>
+
+        </div>
+
+        <!-- Gender -->
+
+        <div class="input-box">
+
+            <label>Gender:</label>
+
+            <div class="gender">
+
+                <label>
+                    <input type="radio"
+                           name="gender"
+                           value="Male"
+                           onchange="checkGender()">
+                    Male
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="gender"
+                           value="Female"
+                           onchange="checkGender()">
+                    Female
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="gender"
+                           value="Other"
+                           onchange="checkGender()">
+                    Other
+                </label>
+
+            </div>
+
+            <small id="genderError"></small>
+
+        </div>
+
+        <!-- City -->
+
+        <div class="input-box">
+
+            <label>City:</label>
+
+            <select id="city" onchange="checkCity()">
+
+                <option value="">Select City</option>
+                <option>Delhi</option>
+                <option>Noida</option>
+                <option>Ghaziabad</option>
+                <option>Lucknow</option>
+                <option>Kanpur</option>
+                <option>Meerut</option>
+                <option>Agra</option>
+                <option>Varanasi</option>
+                <option>Prayagraj</option>
+                <option>Ayodhya</option>
+                <option>Vrindavan</option>
+                <option>Bareilly</option>
+                <option>Aligarh</option>
+                <option>Moradabad</option>
+                <option>Saharanpur</option>
+                <option>Gorakhpur</option>
+                <option>Firozabad</option>
+                <option>Jhansi</option>
+                <option>Muzaffarnagar</option>
+                <option>Budaun</option>
+                <option>Rampur</option>
+                <option>Shahjahanpur</option>
+                <option>Farrukhabad</option>
+                <option>Hapur</option>
+                <option>Etawah</option>
+                <option>Mirzapur</option>
+                <option>Bulandshahr</option>
+                <option>Sambhal</option>
+                <option>Amroha</option>
+                <option>Hardoi</option>
+                <option>Fatehpur</option>
+                <option>Raebareli</option>
+                <option>Orai</option>
+                <option>Sitapur</option>
+                <option>Bahraich</option>
+                <option>Modinagar</option>
+                <option>Unnao</option>
+                <option>Jaunpur</option>
+                <option>Lakhimpur</option>
+                <option>Hathras</option>
+                <option>Banda</option>
+                <option>Jhansi</option>
+                <option>Muzaffarnagar</option>
+                <option>Budaun</option>
+                <option>Pilibhit</option>
+                <option>Barabanki</option>
+                <option>Khurja</option>
+                <option>Gonda</option>
+                <option>Mainpuri</option>
+                <option>Lalitpur</option>
+                <option>Etah</option>
+                <option>Deoria</option>
+                <option>Ghazipur</option>
+                <option>Sultanpur</option>
+                <option>Azamgarh</option>
+                <option>Bijnor</option>
+                <option>Sahaswan</option>
+                <option>Basti</option>
+                <option>Chandausi</option>
+                <option>Akbarpur</option>
+                <option>Ballia</option>
+                <option>Tanda</option>
+                <option>Shikohabad</option>
+                <option>Shamli</option>
+                <option>Awagarh</option>
+                <option>Kasganj</option>
+            </select>
+
+            <small id="cityError"></small>
+
+        </div>
+
+        <button type="button"
+                class="submit-btn"
+                onclick="validate()">
+
+            Register
+
+        </button>
+
+    </form>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
